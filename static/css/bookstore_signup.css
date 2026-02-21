@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.main{
+    height: 560px;
+    width: auto;
+    background-image: url("../images/bookstore_signup.webp");
+    justify-items: center;
+    align-content: center;
+}
+.center{
+    height: 500px;
+    width: 500px;
+    border: none;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    color: white;
+    position: relative;
+    /* position: relative; */
+}
+.head{
+    font-size: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    color:rgb(250, 201, 6);
+}
+.sub{
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+     align-items: center;
+}
+input{
+    height: 40px;
+    width: 350px;
+    font-size:15px ;
+    border-radius: 15px;
+    border: none;   
+}
+input[type=text],[type=password] {
+   padding-left: 10px;
+}
+#action{
+    height:50px ;
+    width: 150px;
+    background-color:rgb(250, 201, 6) ;
+    font-weight: bolder;
+    color: black;
+
+}
+a{
+    text-decoration: none;
+    font-weight: bold;
+    color:rgb(250, 201, 6);
+}

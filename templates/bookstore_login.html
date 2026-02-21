@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href={% static "css/bookstore_login.css"%}>
+</head>
+<body>
+    <form method="POST" class="main">
+        {% csrf_token %}
+        <div class="center">
+            <div class="head">Login </div>
+            <div class="details">
+                <div><input name="username" type="text" placeholder="Username" required></div>
+                <div><input name="password" type="password" placeholder="Password" required></div>
+                <div><input id="action" type="submit" placeholder="LOGIN"></div>
+            </div>
+            <div class="bottom">Donot have an account?<a href="{% url 'bookstore_Signup'%}">Signup</a> </div>
+        </div>
+    </form>
+</body>
+</html>

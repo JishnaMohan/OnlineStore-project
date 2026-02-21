@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href={% static "css/bookstore_contact.css"%}>
+</head>
+<body>
+    <div class="header">
+    {% include "header.html" %}
+    </div>
+    <form method="POST" class="main">
+        {% csrf_token %}
+        <div class="details">
+            <div class="address">
+                <div class="bname">12/345 , DELTA TOWER</div>
+                <div class="place">THALAP , KANNUR</div>
+                <div class="pin"> 670653</div>
+            </div>
+            <div class="contact">
+                <div class="phone">8330892787</div>
+                <div class="email">jishnamohanam@gmail.com</div>
+            </div>      
+        </div>
+    </form>
+</body>
+</html>

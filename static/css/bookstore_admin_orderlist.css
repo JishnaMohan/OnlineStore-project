@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.head{
+    height: 50px;
+    width: auto;
+    font-size: 20px;
+    font-weight: bold;
+    justify-self: center;
+    align-content: center; 
+}
+table{
+    margin-top: 20px;
+    width: 80%;
+    margin-left: 100px;
+}
+th,td{
+    border-bottom: 1px solid rgb(2, 2, 112);
+    padding: 10px;
+    text-align: left;
+}
+th{
+    background-color: rgb(2, 2, 112);
+    color: white;
+}
+td{
+    color: rgb(2, 2, 112);
+}

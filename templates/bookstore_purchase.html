@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href={% static "css/bookstore_purchase.css"%}>
+</head>
+<body>
+    <div class="header">
+    {% include "header.html" %}
+   </div>
+    <form method="POST" class="main" action="{% url 'payment_success' product_detail.id %}" >
+        {% csrf_token %}
+        <div class="payment-box">
+            <h2>Payment</h2>
+            <div class="amount">Amount: Rs.{{ product_detail.book_price }}</div>
+            <div class="option"><input type="radio" name="payment_method" value="gpay"> <img src="{% static 'images/gpay.jpg'%}">Google Pay</div>
+            <div class="option"><input type="radio" name="payment_method" value="card"><span class="material-symbols-outlined">credit_card</span>Debit/Credit Card</div>
+            <div class="option"><input type="radio" name="payment_method" value="cod"><span class="material-symbols-outlined">payments</span>Cash on Delivery</div>
+            <button type="submit"> Proceed to Pay </button>
+        </div>
+    </form>
+</body>
+</html>
+
+    

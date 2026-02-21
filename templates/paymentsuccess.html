@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href={% static "css/paymentsuccess.css" %}>
+</head>
+<body>
+    <div class="main">
+        {% csrf_token %}
+        <div class="header">
+            {% include "header.html" %}
+        </div>
+        <div class="contain">
+            <div class="details">    
+                <div class="bk_name">Book Name:<input name="bk_name" type="text"value="{{ bk_details.book_name}}" readonly></div>
+                <div class="price">Price:<input name="price" type="text"value="{{ bk_details.book_price}}" readonly></div>
+                <div class="method">Payment Method:<input name="payment_method" type="text"value="{{payment_method}}" readonly> </div>
+                <div class="status">Status:<input name="status" type="text"value="Ordered" readonly></div>
+                <div class="btn"><button onclick="func()">Continue</button></div>
+                <div class="box">
+                <h1> Order Placed!</h1>
+                <p>Thank you for your purchase.</p>
+            </div>
+            </div>
+            <div class="box" id="box">
+                <h1> Order Placed!</h1>
+                <p>Thank you for your purchase.</p>
+            </div>
+        </div>
+    </div>
+    <script src={% static "js/paymentsuccess.js" %}></script>
+</body>

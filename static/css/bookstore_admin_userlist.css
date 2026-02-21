@@ -1,0 +1,44 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.main{
+    height: 100%;
+    width: auto;
+}
+.header{
+    height: 80px;
+    width: auto;
+    font-size: 30px;
+    font-weight: bold;
+    align-content: center;
+    
+    text-align: center;
+}
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+.top{
+    height: 80px;
+    width: 100%;
+   
+    gap: 480px;
+}
+.top span{
+    margin-left: 20px;
+}
+table,tr,td,th{
+    width: 250px;
+    height: auto;
+    margin-top: 20px;
+    border: 1px solid black;
+    justify-self: center;
+    font-size: 19px;
+}
+td{
+    font-weight: lighter;
+}

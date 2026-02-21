@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href={% static "css/bookstore_myorder.css"%}>
+</head>
+<body>
+    <div class="header">
+        {% include "header.html" %}
+    </div>
+    <form method="POST" class="main">
+        {% for i in order %}
+        <div class="sub"> 
+            <div class="imgs"><img src="{{i.book.book_image.url }}"></div>    
+            <div class="name">{{i.book.book_name }}</div>
+            <div class="status">{{i.status}}</div>
+        </div>
+        {% endfor %}
+    </form>
+</body>
+</html>

@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href={% static "css/bookstore_admin_orderlist.css"%}>
+</head>
+<body>
+    <form method="POST" class="main">
+        {% csrf_token %}
+        <div class="head">Order Details</div>
+        <table>
+            <tr>
+                <th>Order ID</th>
+                <th>Name</th>
+                <th>Book Name</th>
+                <th>Payment Method</th>
+                <th>Date</th>
+                <th>Status</th>
+            </tr>
+            {% for i in orders %}
+            <tr>
+                <td>{{ i.id }}</td>
+                <td>{{ i.o_user }}</td>
+                <td>{{ i.book.book_name }}</td>
+                <td>{{ i.payment_method }}</td>
+                <td>{{ i.order_date }}</td>
+                <td>{{ i.status }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </form>
+</body>
+</html>

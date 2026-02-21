@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.main{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url("../images/bookstore_about.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    justify-items: center;
+    align-content: center;
+}
+.header {
+    height: 120px;
+    width: 100%;
+}
+.aboutus{
+    height: 400px;
+    width: 650px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+}
+.head{
+    font-size: 50px;
+    color: rgb(250, 217, 1);
+    font-weight: bold;
+}
+.description{
+    font-size: 23px;
+    text-align: justify;
+    line-height: 1.5;
+}

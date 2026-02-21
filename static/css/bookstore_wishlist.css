@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.main{
+    display: flex;
+    gap: 20px;
+}
+.header {
+    height: 120px;
+    width: 100%;
+    background-color:  rgb(236, 236, 117);
+}
+.sub{
+    height: 350px;
+    width: 200px;
+    border: 1px solid black;
+    margin-left: 20px;
+    margin-top: 150px;
+}
+.imgs img{
+    height: 200px;
+    width: 200px;
+}
+.name,.price{
+    height: 50px;
+    width: 200px;
+    align-content: center;
+    text-align: center;
+    font-size: 18px;
+}
+button{
+    height: 30px;
+    width: 150px;
+    font-size: 18px;
+    background-color: blue;
+    border-radius: 10px;
+    border: none;
+}
+.btn{
+    align-items: center;
+    justify-self: center;
+}

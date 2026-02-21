@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href={% static "css/bookstore_admin_userlist.css"%}>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_back" />
+
+</head>
+<body>
+    <form method="POST" class="main">
+        {% csrf_token %}
+         <div class="top"><div><a href="{% url 'admin_homepage' %}"><span class="material-symbols-outlined">arrow_back</span></a></div>    
+        <div class="header">Users</div>
+        <div class="cust">
+            <table>
+                <tr><th>Id</th>
+                <th>Name</th></tr>   
+                {% for i in userlist %}
+                <tr><td>{{i.id}}</td>
+                <td>{{i.book_user}}</td></tr>
+                {% endfor %}
+            </table>
+        </div>
+    </form>
+</body>
+</html>

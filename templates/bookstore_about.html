@@ -1,0 +1,29 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href= {% static 'css/bookstore_about.css'%} >
+</head>
+<body>
+   <div class="header">
+    {% include "header.html" %}
+   </div>
+    <form method='POST' class="main">
+        <div>
+        {% csrf_token %}
+        <div class="aboutus">
+            <div class="head"></div>
+            <div class="description">FOUND YOUR CHOICE is a digital storefront on the internet where 
+                customers can browse, search, and buy books anytime, offering vast selections, easy access , 
+                convenience, and features like user reviews, personalized recommendations, and multiple
+                 payment/shipping options, acting as a virtual library and shop in one, differing from physical 
+                 stores by 24/7 access and vast, searchable inventory. </div>
+        </div>
+    </div>
+    </form> 
+</body>
+</html>

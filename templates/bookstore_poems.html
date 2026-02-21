@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href={% static "css/bookstore_stories.css"%}>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+<body>
+    <div class="story"><div class="header">
+        {% include "header.html" %}
+    </div>
+    <div class="mainclass">
+        {% csrf_token %}
+        <div class="common">
+            {% for i in books %}
+            <div class="bdetails">
+                <div class="bookss"><img src="{{ i.book_image.url }}" >
+                    <div class="wish"><span class="material-symbols-outlined">favorite</span></div>
+                </div>
+                <div class="bname"><a href="{% url 'book_details' i.id%}">{{ i.book_name }}</a></div>  
+                <div class="price">Rs.{{ i.book_price }}</div> 
+
+            </div>
+             {% endfor %}
+        </div>
+    </div>
+    </div>
+</body>
+</html>

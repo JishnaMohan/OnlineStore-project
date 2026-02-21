@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href={% static "css/bookstore_cart.css"%}>
+</head>
+<body>
+    <div class="header">
+        {% include "header.html" %}
+    </div>
+    <form method="POST" class="main" enctype="multipart/form-data">
+    {% csrf_token %}
+        <div class="page">
+            {% for i in cart_book %}
+            <div class="unique">
+                <div class="image">  <img src="{{ i.book.book_image.url }}"></div>            
+                <div class="name"> {{ i.book.book_name }} </div>
+                <div class="quantity"> {{i.quantity}} </div>
+                <div class="price">  {{ i.book.book_price }} </div>    
+                <div class="buy"><button type="submit" name="buy_now" value="{{ i.id  }}"> Buy this now</button></div>
+                <div class="remove"><button type="submit" name="remove_item" value="{{ i.id  }}">Remove</button></div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="end">
+            <div> total product price</div>
+            <div><button> PLACE ORDER</button></div>        
+        </div>
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href={% static "css/bookstore_admin_book.css"%}>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_back" />
+</head>
+<body>
+    <form method="POST" enctype="multipart/form-data" class="main">
+        {% csrf_token %}
+        <div class="top"><div><a href="{% url 'admin_homepage' %}"><span class="material-symbols-outlined">arrow_back</span></a></div>    
+        <div class="head"> Update Book</div></div>
+        <div class="details">
+            <div class="main_section">
+                <div class="left_section">
+                    <div>Category </div>
+                    <div>Book name</div>
+                    <div>Author name</div>
+                    <div>Publish Date</div>
+                    <div>Price</div>
+                    <div>Number of item</div>
+                    <div>Book image</div>
+                </div>
+                <div class="right_section">
+                    <select name="category" class="input_box">
+                        <option value="">Select Category</option>
+                        {% for cat in categories %}
+                        <option value="{{ cat.id }}">{{ cat.name }}</option>
+                        {% endfor %}
+                    </select>
+                     <input name="bname" type="text">
+                    <input name="author" type="text">
+                    <input name="publish" type="text">
+                    <input name="price" type="number">
+                    <input name="quantity" type="number">
+                    <input name="bimg" type="file" accept="image/*">
+                </div>
+            </div>
+            <div class="btn"><button>Submit</button></div>
+        </div> 
+    </form>
+</body>
+</html>

@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href={% static "css/bookstore_home.css"%}>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Oleo+Script:wght@400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <form method="POST" class="main">
+        {% csrf_token %}
+        <video autoplay muted loop playsinline>
+        <source src="{% static 'images/bookstore_home.mp4' %}" type="video/mp4"></video>
+            
+            <div class="header">
+                <div class="logo"><img src="{% static 'images/bookstore_logo.jpeg'%}"> </div> 
+                <div class="home_icon"><a href="">
+                    <span class="material-symbols-outlined">menu</span></a>
+                    <div class="content">
+                        <div class="home"><a href="{% url 'bookstore_home' %}">HOME</a></div>
+                        <div class="about"><a href="{% url 'bookstore_about' %}">ABOUT US</a></div>
+                        <div class="book"><a href=""> BOOKS</a>
+                            <ul class="book_list">
+                                <li><a href="{% url 'bookstore_stories' %}">Stories</a></li>
+                                <li><a href="{% url 'bookstore_poems' %}">Poems</a></li>
+                                <li><a href="{% url 'bookstore_bio' %}">Biographies & Memories</a></li>
+                            </ul>
+                        </div>
+                        <div class="contact"><a href="{% url 'bookstore_contact' %}">CONTACT</a></div> 
+                    </div>
+                </div> 
+                <div class="symbols">
+                   
+                        <div class="searchbar">
+                        <div class="span"><span class="material-symbols-outlined">search </span></div>
+                        <div><input name="search" placeholder="SEARCH">
+                          
+                        </div>
+                    </div>
+                    <div class="cart"><a href="{% url 'bookstore_cart' %}" ><span class="material-symbols-outlined">shopping_cart</span></a>
+                        <div class="cart_item"></div>
+                    </div>
+                    <div class="profile"><a href=""><span class="material-symbols-outlined">account_circle</span></a>
+                        <div class="profile_list">
+                            <div class="uname">username</div>
+                            <ul>
+                                <li><a href="{% url 'bookstore_orders' %}" >my orders</a></li>
+                                <li><a href="{% url 'bookstore_wishlist' %}" >wishlist</a></li>
+                                <li><a href="{% url 'page_logout' %}" >logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          
+            <div class="second">WELCOME TO THE BOOK WORLD</div>  
+        
+    </form>
+</body>
+</html>

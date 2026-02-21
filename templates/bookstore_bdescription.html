@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href={% static "css/bookstore_bdescription.css"%}>
+    <script src={% static "js/bookstore_bdescription.js" %}></script>
+</head>
+<body>
+    <div class="header">
+    {% include "header.html" %}
+   </div>
+    <form method="POST" class="main" action={% url 'book_details' product_detail.id %}>
+        {% csrf_token %}
+        <div class="page">    
+            <div class="unique">
+                <div class="picture"><img src="{{ product_detail.book_image.url }}" ></div>
+                <div class="des">
+                    <div class="name" name="b_name">{{ product_detail.book_name }}</div>
+                    <div class="details">
+                       
+                        <div class="author">Author:<input name="author" type="text"value="{{ product_detail.author_name }}" readonly> </div>    
+                        <div class="publish">Published:<input name="publish" type="text"value="{{ product_detail.publish_date }}" readonly></div>
+                        <div class="price">Price:<input name="price" type="number"value="{{ product_detail.book_price  }}" readonly></div>
+                         <div class="quantity">Quantity:<input id="output" name="output" value="1"></div>
+                         
+                    </div>
+                    <div class="shopping">
+                        <div class="buy"><button type="submit" name="action" value="buy_now">BUY NOW</button></div> 
+                        <div class="add"><button type="submit" name="action" value="add_to_cart"> ADD TO CART</button></div> 
+                    </div>
+                </div>
+            </div>     
+        </div>
+    </form>
+    <div class="count">
+        <button id="add" type="button" onclick="add()">+</button>  
+        <button id="sub" type="button" onclick="sub()">-</button>
+    </div> 
+</body>
+</html>
